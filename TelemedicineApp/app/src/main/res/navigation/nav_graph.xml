@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.telemedicineapp.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.telemedicineapp.ui.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.telemedicineapp.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_bookedSlotsFragment"
+            app:destination="@id/bookedSlotsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_doctorDetailFragment"
+            app:destination="@id/doctorDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.example.telemedicineapp.ui.ResetPasswordFragment"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password">
+        <action
+            android:id="@+id/action_resetPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/bookedSlotsFragment"
+        android:name="com.example.telemedicineapp.ui.BookedSlotsFragment"
+        android:label="individual_booked_slot"
+        tools:layout="@layout/individual_booked_slot" >
+        <action
+            android:id="@+id/action_bookedSlotsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/doctorDetailFragment"
+        android:name="com.example.telemedicineapp.ui.DoctorDetailFragment"
+        android:label="fragment_doctor_detail"
+        tools:layout="@layout/fragment_doctor_detail" >
+        <action
+            android:id="@+id/action_doctorDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="selectedDoctor"
+            app:argType="com.example.telemedicineapp.model.Doctor"/>
+        <action
+            android:id="@+id/action_doctorDetailFragment_to_bookedSlotsFragment"
+            app:destination="@id/bookedSlotsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.telemedicineapp.ui.UserProfileFragment"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+</navigation>
